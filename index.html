@@ -3,69 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Komal Palace Hotel | Luxury Stay</title>
+    <title>Komal Palace Hotel | Luxury Stay in Sirodi, Rajasthan</title>
     <style>
         /* Basic Reset & Styling */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; color: #333; }
-        header { background: #2c3e50; color: white; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
         
+        /* Header & Navigation */
+        header { 
+            background: #2c3e50; 
+            color: white; 
+            padding: 1rem 2rem; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 { font-size: 1.8rem; }
+        nav a { color: white; text-decoration: none; margin-left: 2rem; transition: color 0.3s; }
+        nav a:hover { color: #3498db; }
+
         /* Hero Section */
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1350&q=80');
-            height: 60vh; background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
+            height: 60vh; 
+            background-size: cover; 
+            background-position: center;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            color: white; 
+            text-align: center;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; font-weight: 700; }
+        .hero p { font-size: 1.5rem; font-weight: 300; }
 
-        /* Content Sections */
-        .container { max-width: 1000px; margin: auto; padding: 2rem; }
-        .section-title { text-align: center; color: #2c3e50; margin-bottom: 2rem; }
-        
-        /* Grid for Map and Contact */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+        /* Container */
+        .container { max-width: 1100px; margin: auto; padding: 2rem; }
+        .section-title { 
+            text-align: center; 
+            color: #2c3e50; 
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        /* Facilities Section */
+        .facilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .facility-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .facility-card:hover { transform: translateY(-10px); }
+        .facility-card h3 { color: #2c3e50; margin-bottom: 1rem; font-size: 1.5rem; }
+        .facility-card p { color: #555; }
+
+        /* Contact Grid */
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .contact-info h3 { color: #2c3e50; margin-bottom: 1rem; font-size: 1.3rem; }
+        .contact-info p { margin-bottom: 0.8rem; line-height: 1.8; }
+        .contact-info strong { color: #2c3e50; }
 
         /* Map Styling */
-        .map-container { position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 8px; }
-        .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .map-container { 
+            position: relative; 
+            padding-bottom: 75%; 
+            height: 0; 
+            overflow: hidden; 
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .map-container iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            border: 0; 
+        }
 
-        footer { background: #2c3e50; color: white; text-align: center; padding: 2rem; margin-top: 2rem; }
+        /* Footer */
+        footer { 
+            background: #2c3e50; 
+            color: white; 
+            text-align: center; 
+            padding: 2rem; 
+            margin-top: 3rem;
+        }
+        footer p { margin-bottom: 0.5rem; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) { 
+            header { flex-direction: column; text-align: center; }
+            nav a { margin-left: 1rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Welcome to Komal Palace Hotel</h1>
+        <h1>🏨 Komal Palace Hotel</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <section class="hero">
-        <h1>Your Home Away From Home</h1>
-        <p>Comfort, Elegance, and Luxury</p>
+    <section class="hero" id="home">
+        <h1>Komal Palace Hotel</h1>
+        <p>Experience Luxury & Comfort in Sirodi, Rajasthan</p>
     </section>
 
     <div class="container">
-        <h2 class="section-title">Find Us</h2>
+        <h2 class="section-title">Our Facilities</h2>
+        <div class="facilities">
+            <div class="facility-card">
+                <h3>🏋️ Gym</h3>
+                <p>Fully equipped fitness center to keep you healthy and active during your stay.</p>
+            </div>
+            <div class="facility-card">
+                <h3>🏊 Swimming Pool</h3>
+                <p>Relax and rejuvenate in our beautiful and well-maintained swimming pool.</p>
+            </div>
+            <div class="facility-card">
+                <h3>🍽️ Food & Restaurant</h3>
+                <p>Delicious multi-cuisine dining experience with authentic Rajasthani specialties.</p>
+            </div>
+            <div class="facility-card">
+                <h3>🛏️ Comfortable Rooms</h3>
+                <p>Spacious and well-appointed rooms designed for your ultimate comfort and relaxation.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title" id="contact">Find Us & Contact</h2>
         <div class="contact-grid">
-            <div>
-                <h3>Contact Details</h3>
-                <p><strong>Address:</strong> Located at the heart of the city.</p>
-                <p><strong>Phone:</strong> +1 (555) 000-0000</p>
+            <div class="contact-info">
+                <h3>📍 Location Details</h3>
+                <p><strong>Hotel Name:</strong> Komal Palace Hotel & Restaurant</p>
+                <p><strong>Address:</strong><br>MMXJ+788 Komal Palace Hotel & Restaurant (Sirodi)<br>Sirodi, Rajasthan 307511</p>
+                <p><strong>Phone:</strong> +91 (Contact your local office)</p>
                 <p><strong>Email:</strong> reservations@komalpalacehotel.com</p>
-                <p>We are conveniently located near major transit hubs and local attractions.</p>
+                <p>Conveniently located in the heart of Sirodi with easy access to local attractions and amenities.</p>
             </div>
             
             <div class="map-container">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15000!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1234567890" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.7890123456!2d73.47856!3d25.89456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394c6f8b9c9c9c9d%3A0x1234567890abcdef!2sKomal%20Palace%20Hotel%20%26%20Restaurant%20(Sirodi)!5e0!3m2!1sen!2sin!4v1234567890" 
                     allowfullscreen="" 
-                    loading="lazy">
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Komal Palace Hotel. All rights reserved.</p>
+        <p>&copy; 2026 Komal Palace Hotel & Restaurant. All rights reserved.</p>
+        <p>📍 Sirodi, Rajasthan | 🌟 Your Perfect Stay Awaits</p>
     </footer>
 
 </body>
