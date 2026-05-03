@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komal Palace Hotel | Luxury Stay</title>
+    <style>
+        /* Basic Reset & Styling */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; line-height: 1.6; color: #333; }
+        header { background: #2c3e50; color: white; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1350&q=80');
+            height: 60vh; background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+
+        /* Content Sections */
+        .container { max-width: 1000px; margin: auto; padding: 2rem; }
+        .section-title { text-align: center; color: #2c3e50; margin-bottom: 2rem; }
+        
+        /* Grid for Map and Contact */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+        /* Map Styling */
+        .map-container { position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 8px; }
+        .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        footer { background: #2c3e50; color: white; text-align: center; padding: 2rem; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Komal Palace Hotel</h1>
+    </header>
+
+    <section class="hero">
+        <h1>Your Home Away From Home</h1>
+        <p>Comfort, Elegance, and Luxury</p>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">Find Us</h2>
+        <div class="contact-grid">
+            <div>
+                <h3>Contact Details</h3>
+                <p><strong>Address:</strong> Located at the heart of the city.</p>
+                <p><strong>Phone:</strong> +1 (555) 000-0000</p>
+                <p><strong>Email:</strong> reservations@komalpalacehotel.com</p>
+                <p>We are conveniently located near major transit hubs and local attractions.</p>
+            </div>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15000!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1234567890" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Komal Palace Hotel. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
